@@ -25,32 +25,28 @@ MORSE_CODE = {
   '-..-' => 'X',
   '-.--' => 'Y',
   '--..' => 'Z'
-}
+}.freeze
 
 def decode_char(morse_char)
-  if MORSE_CODE.key?(morse_char)
-    MORSE_CODE[morse_char]
-  end
+  MORSE_CODE[morse_char] if MORSE_CODE.key?(morse_char)
 end
 
 def decode_word(word)
-    str = ''
-    word.split.each do |char|
-      str += decode_char(char)
-    end
-    str
+  str = ''
+  word.split.each do |char|
+    str += decode_char(char)
   end
+  str
+end
 
-  
 def decode_msg(msg)
-    message = ''
-    msg.strip.tr('/',' ').split.each do | element |
+  message = ''
+  msg.strip.tr('/', ' ').split.each do |element|
     message += decode_word(element)
-    end
-    message
-end   
+  end
+  message
+end
 
-
-puts (decode_char('.-'))
-puts (decode_word('.- .- .- .-'))
-puts (decode_msg('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...'))
+puts(decode_char('.-'))
+puts(decode_word('.- .- .- .-'))
+puts(decode_msg('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...'))
