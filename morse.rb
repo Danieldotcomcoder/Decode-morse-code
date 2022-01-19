@@ -42,7 +42,7 @@ end
 def decode_msg(msg)
   message = ''
   msg.strip.tr('/', ' ').split('   ').each do |element|
-    message += "#{decode_word(element)} " 
+    message += "#{decode_word(element)} "
   end
   message
 end
