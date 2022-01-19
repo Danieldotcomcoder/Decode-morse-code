@@ -1,4 +1,4 @@
-# Decode-morse-code# Databases-project
+# Decode-morse-code
 
 In this project, we will create methods in ruby to convert morse code into string.
 
