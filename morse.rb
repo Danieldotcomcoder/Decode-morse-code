@@ -41,12 +41,10 @@ end
 
 def decode_msg(msg)
   message = ''
-  msg.strip.tr('/', ' ').split.each do |element|
-    message += decode_word(element)
+  msg.strip.tr('/', ' ').split('   ').each do |element|
+    message += "#{decode_word(element)} " 
   end
   message
 end
 
-puts(decode_char('.-'))
-puts(decode_word('.- .- .- .-'))
 puts(decode_msg('      .-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...'))
